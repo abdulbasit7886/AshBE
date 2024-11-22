@@ -1,11 +1,18 @@
 const express = require("express");
 const Email = require("./email");
 const Stripe = require("./stripe");
+var cors = require("cors");
+
 require("stripe");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
+let corsOptions = {
+  origin: "*",
+};
+app.use(cors());
+
 const port = process.env.PORT;
 app.get("/", async (req, res) => {
   try {
