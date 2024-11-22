@@ -16,7 +16,7 @@ app.use(cors());
 const port = process.env.PORT;
 app.get("/", async (req, res) => {
   try {
-    res.send("Server running successfully");
+    res.send("Server running successfully cors");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
